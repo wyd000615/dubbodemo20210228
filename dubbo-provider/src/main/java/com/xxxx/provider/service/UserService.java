@@ -2,10 +2,13 @@ package com.xxxx.provider.service;
 
 import com.xxxx.common.pojo.User;
 import com.xxxx.common.service.IUserService;
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Service;
+//import org.apache.dubbo.config.annotation.Service;
 
-@Service("userService")
-public class UserServiceImpl implements IUserService {
+//@Service("userService")
+@Service(version = "1.0")  //注意 此处用的是dubbo提供的service
+//@Service
+public class UserService implements IUserService {
     @Override
     public User selectUserById(int id) {
         User user = new User();
